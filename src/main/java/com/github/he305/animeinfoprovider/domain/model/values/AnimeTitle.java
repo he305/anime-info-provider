@@ -1,15 +1,15 @@
 package com.github.he305.animeinfoprovider.domain.model.values;
 
-import lombok.Getter;
+import lombok.Value;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Getter
+@Value
 public class AnimeTitle {
-    private final String mainTitle;
-    private final Set<String> synonyms;
+    String mainTitle;
+    Set<String> synonyms;
 
     public AnimeTitle(String mainTitle) {
         this.mainTitle = mainTitle;
