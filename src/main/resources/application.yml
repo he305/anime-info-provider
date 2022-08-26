@@ -1,0 +1,34 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: anime-info-provider
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_HOST:http://localhost:9000/eureka}
+  instance:
+    instance-id: anime-info-provider-${random.uuid}
+
+management:
+  endpoint:
+    health:
+      show-components: always
+      show-details: always
+      status:
+        http-mapping:
+          up: 207
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, beans, metrics
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: Anime info provider
+    description: App is used to provide anime info based on sent url of anime db site
+    version: 1.0.0
